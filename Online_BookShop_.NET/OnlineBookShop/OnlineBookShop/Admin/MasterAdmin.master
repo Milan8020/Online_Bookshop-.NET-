@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterAdmin.master.cs" Inherits="MasterAdmin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 20%;
+            height: 302px;
+        }
+        .style2
+        {
+            width: 60%;
+            height: 302px;
+        }
+    </style>
+</head>
+<body style="position:absolute;">
+    <form id="form1" runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td class="style1"></td>
+            <td class="style2">
+                <div id="titleimg">
+                    <div id="menu">
+	                    <ul>
+		                    <li><asp:LinkButton ID="linkHome" runat="server" onclick="linkHome_Click">Home</asp:LinkButton></li>
+		                    <li><asp:LinkButton ID="linkBooks" runat="server">Books</asp:LinkButton>
+		                        <ul>
+		    		                <li><asp:LinkButton ID="linkAddNewBooks" runat="server" 
+                                            onclick="linkAddNewBooks_Click">Add Books</asp:LinkButton></li>
+                                    <li><asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click" 
+                                            >View Books</asp:LinkButton></li>
+                                    <li><asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click"  
+                                            >Sold Books</asp:LinkButton></li>
+			    	                <li><asp:LinkButton ID="linkModifyBooks" runat="server" 
+                                            onclick="linkModifyBooks_Click">Modify Books</asp:LinkButton></li>
+                                    <li><asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click">Delete Books</asp:LinkButton></li>
+			                    </ul>
+			                </li>
+		                    <li><asp:LinkButton ID="linkUsers" runat="server">Users</asp:LinkButton>
+		                        <ul>
+				                    <li><asp:LinkButton ID="linkModufyUsers" runat="server" 
+                                            onclick="linkModufyUsers_Click">View Users</asp:LinkButton></li>
+		    	                </ul>
+                            </li>
+    		              
+		                    <li><asp:LinkButton ID="linkLogout" runat="server" onclick="linkLogout_Click1" >Logout</asp:LinkButton></li>
+	                    </ul>
+                    </div>
+                </div>
+            </td>
+            <td class="style1"></td>
+        </tr>
+        <tr style="margin:0px auto auto auto" valign="top">
+            <td class="categoryimg">
+            <center>
+                <h1>Welcome,</h1>
+                <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="25px" ForeColor="#000099"></asp:Label><br />
+                <asp:LinkButton ID="linkChangepassword" runat="server" 
+                            onclick="linkChangepassword_Click">Change Password</asp:LinkButton>
+                <h1></h1>
+                <h1>Categories</h1>
+                <center><asp:LinkButton ID="linkArtPho" runat="server" onclick="linkArtPho_Click">Art and Photography</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkHealth" runat="server" onclick="linkArtPho_Click">Health</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkLaw" runat="server" onclick="linkArtPho_Click">Law</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkMedicine" runat="server" onclick="linkArtPho_Click">Medicine</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkLiteFic" runat="server" onclick="linkArtPho_Click">Literature and Fiction</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkProTech" runat="server" onclick="linkArtPho_Click">Proffesional and Technical</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkMysThr" runat="server" onclick="linkArtPho_Click">Mystery and Thrillers</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkBioMemo" runat="server" onclick="linkArtPho_Click">Biography and Memories</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkReference" runat="server" onclick="linkArtPho_Click">Reference</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkRelSpi" runat="server" onclick="linkArtPho_Click">Religion and Spirituality</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkSciFicFan" runat="server" onclick="linkArtPho_Click">Science Fiction and Fantacy</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkTravel" runat="server" onclick="linkArtPho_Click">Travel</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkOutNature" runat="server" onclick="linkArtPho_Click">Outdoors and Natures</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkBusiInves" runat="server" onclick="linkArtPho_Click">Business and Investing</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkChild" runat="server" onclick="linkArtPho_Click">Children's Books</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkCompInter" runat="server" onclick="linkArtPho_Click">Computers and Internet</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkNonfiction" runat="server" onclick="linkArtPho_Click">Nonfiction</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkSci" runat="server" onclick="linkArtPho_Click">Science</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkEntertainment" runat="server" onclick="linkArtPho_Click">Entertainment</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkHistory" runat="server" onclick="linkArtPho_Click">History</asp:LinkButton></center>
+                </center>
+            </td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <p>
+                        <br />
+                    </p>
+                    <p>
+                    </p>
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="categoryimg">
+                 <br />
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="AdSource" 
+                                Height="450px" Width="200px" />
+                            <asp:SqlDataSource ID="AdSource" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:con %>" 
+                                SelectCommand="SELECT * FROM [advertisement]"></asp:SqlDataSource>
+                            <asp:Timer ID="Timer1" runat="server" Interval="3000">
+                            </asp:Timer>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+            </td>
+        </tr>
+        <tr style="height:100px">
+            <td>&nbsp;</td>
+            <td class="categoryimg">
+                <h1 style="text-align:center;">SS's Book Store  © 2018</h1>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>

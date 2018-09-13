@@ -1,0 +1,188 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterUser.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SS's Book Store</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+</head>
+<body style="position:absolute;">
+    <form id="form1" runat="server">
+    <table style="width:100%;">
+        <tr style="height:180px;">
+            <td style="width:20%">&nbsp;</td>
+            <td style="width:60%">
+                <div id="titleimg">
+                    <div id="menu">
+	                    <ul>
+		                    <li><asp:LinkButton ID="linkHome" runat="server" onclick="linkHome_Click">Home</asp:LinkButton></li>
+		                    <li><asp:LinkButton ID="linkBooks" runat="server">Books</asp:LinkButton>
+		                        <ul>
+		    		                <li><asp:LinkButton ID="linkNewRelease" runat="server" onclick="linkArtPho_Click">New Release</asp:LinkButton></li>
+			    	                <li><asp:LinkButton ID="linkBestSellers" runat="server" onclick="linkArtPho_Click">Best Seller</asp:LinkButton></li>
+				                    <li><asp:LinkButton ID="linkRecentlySold" runat="server" onclick="linkArtPho_Click">Recently Sold</asp:LinkButton></li>
+			                    </ul>
+			                </li>
+		                    <li><asp:LinkButton ID="linkSettings" runat="server">My Account</asp:LinkButton>
+		                        <ul>
+				                    <%--<li><asp:LinkButton ID="linkMyCart" runat="server" onclick="linkMyCart_Click">My Cart</asp:LinkButton></li>--%>
+    				                <li><asp:LinkButton ID="linkMyAccount" runat="server" 
+                                            onclick="linkMyAccount_Click1">My Profile</asp:LinkButton></li>
+		    	                </ul>
+                            </li>
+    		                <li><asp:LinkButton ID="linkAboutus" runat="server" onclick="linkAboutus_Click">About Us</asp:LinkButton></li>
+		                    <li><asp:LinkButton ID="linkHelp" runat="server" onclick="linkHelp_Click">Help</asp:LinkButton></li>
+		                    <li><asp:LinkButton ID="linkLogout" runat="server" onclick="linkLogout_Click">Logout</asp:LinkButton></li>
+	                    </ul>
+                    </div>
+                </div>
+            </td>
+            <td style="width:20%">&nbsp;</td>
+        </tr>
+        <tr style="margin:0px auto auto auto" valign="top">
+            <td class="categoryimg">
+            <center>
+                <asp:Panel ID="panelLogin" runat="server">
+                    <h1>Login</h1>
+                    <h3>Enter Username:</h3>
+                    <asp:TextBox ID="textUsername" runat="server" Width="150px"></asp:TextBox> 
+                    
+                                   
+                    <h3>Enter Password:</h3>
+                    <asp:TextBox ID="textPassword" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:ImageButton ID="imageBtnLogin" runat="server" ImageUrl="~/Images/Login.gif" onclick="imageBtnLogin_Click" />
+                    <br/>
+                    <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click">Forgot Password?</asp:LinkButton>
+                    <h3>Not a member yet?<br />
+                        <asp:LinkButton ID="linkSignup" runat="server" onclick="linkSignup_Click" Font-Size="18px">Sign Up</asp:LinkButton>
+                    </h3><br />
+                    <asp:Label ID="labelLoginError" runat="server" Text="Username/Password Is Incorrect." Font-Bold="True" Font-Size="16px" ForeColor="White" Visible="False"></asp:Label>
+                <h1></h1>
+                </asp:Panel>
+                <asp:Panel ID="panelWelcome" runat="server">
+                    <h1>Welcome</h1>
+                    <asp:Label ID="labelUsername" runat="server" Text="Label" Font-Size="24px" 
+                        ForeColor="White"></asp:Label>
+                    <h1></h1>
+                </asp:Panel>
+                <h1>Categories</h1>
+                <center><asp:LinkButton ID="LinkButton1" runat="server" onclick="linkArtPho_Click">All</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkArtPho" runat="server" onclick="linkArtPho_Click">Art and Photography</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkHealth" runat="server" onclick="linkArtPho_Click">Health</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkLaw" runat="server" onclick="linkArtPho_Click">Law</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkMedicine" runat="server" onclick="linkArtPho_Click">Medicine</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkLiteFic" runat="server" onclick="linkArtPho_Click">Literature and Fiction</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkProTech" runat="server" onclick="linkArtPho_Click">Proffesional and Technical</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkMysThr" runat="server" onclick="linkArtPho_Click">Mystery and Thrillers</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkBioMemo" runat="server" onclick="linkArtPho_Click">Biography and Memories</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkReference" runat="server" onclick="linkArtPho_Click">Reference</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkRelSpi" runat="server" onclick="linkArtPho_Click">Religion and Spirituality</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkSciFicFan" runat="server" onclick="linkArtPho_Click">Science Fiction and Fantacy</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkTravel" runat="server" onclick="linkArtPho_Click">Travel</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkOutNature" runat="server" onclick="linkArtPho_Click">Outdoors and Natures</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkBusiInves" runat="server" onclick="linkArtPho_Click">Business and Investing</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkChild" runat="server" onclick="linkArtPho_Click">Children's Books</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkCompInter" runat="server" onclick="linkArtPho_Click">Computers and Internet</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkNonfiction" runat="server" onclick="linkArtPho_Click">Nonfiction</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkSci" runat="server" onclick="linkArtPho_Click">Science</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkEntertainment" runat="server" onclick="linkArtPho_Click">Entertainment</asp:LinkButton></center>
+                <center><asp:LinkButton ID="linkHistory" runat="server" onclick="linkArtPho_Click">History</asp:LinkButton></center>
+            </center>
+            </td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="categoryimg">
+                <h1><center>Search</center></h1>
+                <h3>Book Name:</h3>
+                <asp:TextBox ID="textBookTitle" runat="server" Width="180px"></asp:TextBox>                
+                <h3>Category:</h3>
+                <asp:DropDownList ID="dropCategory" runat="server">
+                <asp:ListItem>All</asp:ListItem>
+                    <asp:ListItem>Art and Photography</asp:ListItem>
+                    <asp:ListItem>Health, Mind and Body</asp:ListItem>
+                    <asp:ListItem>Law</asp:ListItem>
+                    <asp:ListItem>Literature and Fiction</asp:ListItem>
+                    <asp:ListItem>Proffesional and Technical</asp:ListItem>
+                    <asp:ListItem>Mystery and Thriller</asp:ListItem>
+                    <asp:ListItem>Biography and Memories</asp:ListItem>
+                    <asp:ListItem>Reference</asp:ListItem>
+                    <asp:ListItem>Religion and Spirituality</asp:ListItem>
+                    <asp:ListItem>Science Fiction and Fantacy</asp:ListItem>
+                    <asp:ListItem>Travel</asp:ListItem>
+                    <asp:ListItem>Outdoor and Natures</asp:ListItem>
+                    <asp:ListItem>Business and Investing</asp:ListItem>
+                    <asp:ListItem>Children&#39;s Book</asp:ListItem>
+                    <asp:ListItem>Computer and Internet</asp:ListItem>
+                    <asp:ListItem>Nonfiction</asp:ListItem>
+                    <asp:ListItem>Science</asp:ListItem>
+                    <asp:ListItem>Entertainment</asp:ListItem>
+                    <asp:ListItem>History</asp:ListItem>
+                </asp:DropDownList>
+                <br />
+                <br />
+                <asp:ImageButton ID="imageBtnSearch" runat="server" 
+                    ImageUrl="~/Images/Search.gif" onclick="imageBtnSearch_Click" /><br />
+                <asp:LinkButton ID="linkAdvancedsearch" runat="server" onclick="linkAdvancedsearch_Click">Advanced Search</asp:LinkButton>
+                <br />
+                <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="20px" 
+                    ForeColor="Red" Text="Please enter Title." Visible="False"></asp:Label>
+                <h1></h1>
+                 <br />
+                 
+                 <center>
+                 <h1><center>My Cart</center></h1>
+                 <center>
+                      <asp:Label ID="Label10" runat="server"></asp:Label></center>
+                 <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/cart.jpg" 
+                    Height="50px" style="margin-top: 7px" Width="50px" 
+                    onclick="ImageButton2_Click" /></center>
+         
+                  <h1>
+                  <br />
+                <center><b>BOOK INFO</b></center></h1>
+                 <h3><b>Book Name :</b><asp:Label ID="Label9" runat="server" Text="lblbookname"></asp:Label></h3>
+		<%--<b>ISBN</b><asp:Label ID="Label2" runat="server" Text="lblisbn"></asp:Label><br/>
+		<b>Quantity</b><asp:Label ID="Label3" runat="server" Text="lblqnty"></asp:Label><br>
+        <b>Total Price</b><asp:Label ID="Label5" runat="server" Text="lbltprice"></asp:Label><br>
+		<b>Option</b><asp:LinkButton ID="LinkButton1" runat="server">Remove Item</asp:LinkButton><br>
+        <br>
+		<b>Total items in your cart: </b>
+                <asp:Label ID="Label6" runat="server" Text="lbltotalitem"></asp:Label><br>
+	    <b>Total cost of all items: </b>
+                <asp:Label ID="Label7" runat="server" Text="lbltotalcost"></asp:Label><br>         --%><h3><b>Price 
+                    :</b><asp:Label ID="Label4" runat="server" Text="lblprice"></asp:Label></h3><br />
+		         <br />
+                 <br />
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="AdSource" 
+                                Height="450px" Width="250px" onadcreated="AdRotator1_AdCreated" />
+                            <asp:SqlDataSource ID="AdSource" runat="server" 
+                                ConnectionString="<%$ ConnectionStrings:con %>" 
+                                SelectCommand="SELECT * FROM [advertisement]"></asp:SqlDataSource>
+                            <asp:Timer ID="Timer1" runat="server" Interval="3000">
+                            </asp:Timer>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+            </td>
+        </tr>
+        <tr style="height:100px">
+            <td>&nbsp;</td>
+            <td class="categoryimg">
+                <h1 style="text-align:center;">SS&#39;s Book Store © 2018</h1>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>
